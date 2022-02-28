@@ -1,0 +1,22 @@
+﻿<Window x:Class="WpfApp1.Avtoris"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="Авторизация" Height="209.825" Width="226.021" MaxWidth="226" MaxHeight="209.825" MinWidth="226" MinHeight="209.825">
+    <Grid Margin="0,0,-26.8,1">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TextBox x:Name="tb1" HorizontalAlignment="Left" Height="19" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" Margin="109,27,0,0"/>
+        <TextBlock HorizontalAlignment="Left" Margin="11,27,0,0" TextWrapping="Wrap" Text="Введите логин:" VerticalAlignment="Top" Width="108" Height="19" FontFamily="Times New Roman" FontSize="14"/>
+        <TextBlock HorizontalAlignment="Left" Margin="55,61,0,0" TextWrapping="Wrap" Text="Пароль:" VerticalAlignment="Top" Width="51" Height="16" FontFamily="Times New Roman" FontSize="14"/>
+        <TextBox x:Name="tb2" HorizontalAlignment="Left" Height="19" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" Margin="109,63,0,0"/>
+        <Button x:Name="bt1" Content="Войти" HorizontalAlignment="Left" VerticalAlignment="Top" Width="80" Margin="74,129,0,0" Height="27" Click="Button_Click"/>
+        <CheckBox x:Name="cb1" Content="Ученик" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="133,95,0,0"/>
+        <CheckBox x:Name="cb2" Content="Учитель" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="25,95,0,0"/>
+
+    </Grid>
+</Window>

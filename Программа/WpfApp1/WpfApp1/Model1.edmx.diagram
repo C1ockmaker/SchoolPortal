@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="fa6a3f11adc142c49edeaffed2a8bd0c" Name="Diagram1">
+        <EntityTypeShape EntityType="SchoolPortalModel.Algebra_grades" Width="1.5" PointX="5.25" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolPortalModel.Geometry_grades" Width="1.5" PointX="8.25" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolPortalModel.Grades_Students" Width="1.5" PointX="5.25" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolPortalModel.Literature_grades" Width="1.5" PointX="5.25" PointY="18.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolPortalModel.Physical_education_grades" Width="1.5" PointX="8.25" PointY="18.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolPortalModel.Russian_language_grades" Width="1.5" PointX="8.25" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolPortalModel.Schedule" Width="1.5" PointX="3" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolPortalModel.Secret_key" Width="1.5" PointX="0.75" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolPortalModel.Students" Width="1.5" PointX="3" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolPortalModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolPortalModel.Teachers" Width="1.5" PointX="3" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolPortalModel.Work_grades" Width="1.5" PointX="11.25" PointY="14.5" IsExpanded="true" />
+        <AssociationConnector Association="SchoolPortalModel.FK_Algebra_grades_Schedule" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolPortalModel.FK_Algebra_grades_Students" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolPortalModel.FK_Algebra_grades_Teachers" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolPortalModel.FK_Geometry_grades_Schedule" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolPortalModel.FK_Geometry_grades_Students" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolPortalModel.FK_Geometry_grades_Teachers" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolPortalModel.FK_Grades_Students_Schedule" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolPortalModel.FK_Grades_Students_Students" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolPortalModel.FK_Literature_grades_Schedule" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolPortalModel.FK_Literature_grades_Students" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolPortalModel.FK_Literature_grades_Teachers" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolPortalModel.FK_Physical_education_grades_Schedule" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolPortalModel.FK_Physical_education_grades_Students" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolPortalModel.FK_Physical_education_grades_Teachers" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolPortalModel.FK_Russian_language_grades_Schedule" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolPortalModel.FK_Russian_language_grades_Students" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolPortalModel.FK_Russian_language_grades_Teachers" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolPortalModel.FK_Work_grades_Schedule" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolPortalModel.FK_Students_Secret_key" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolPortalModel.FK_Teachers_Secret_key" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolPortalModel.FK_Work_grades_Students" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolPortalModel.FK_Work_grades_Teachers" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

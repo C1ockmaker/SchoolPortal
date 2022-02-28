@@ -1,0 +1,66 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="Интерфейс ученика" Height="417.9" Width="799.2" MaxHeight="427.2" MaxWidth="799.2" MinHeight="427.2" MinWidth="799.2">
+    <Grid Margin="0,0,4,-1.4" MaxHeight="427.2" MaxWidth="799">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Rectangle x:Name="lb3" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="100" Stroke="Black" VerticalAlignment="Top" Width="119" Margin="661,233,0,0" Visibility="Hidden"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Имя пользователя:" VerticalAlignment="Top" Margin="670,11,0,0"/>
+        <DataGrid AutoGenerateColumns="False" x:Name="dt1" HorizontalAlignment="Left" Height="365" VerticalAlignment="Top" Width="642" Margin="10,11,0,0" CanUserResizeColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Date" Width="78" FontSize="15" Binding="{Binding Schedule.Date}"/>
+                <DataGridTextColumn Header="Algebra" Width="*" FontSize="20" Binding="{Binding Algebra}"/>
+                <DataGridTextColumn Header="Geometry" Width="*" FontSize="20" Binding="{Binding Geometry}"/>
+                <DataGridTextColumn Header="Literature" Width="*" FontSize="20" Binding="{Binding Literature}" />
+                <DataGridTextColumn Header="Physical education" Width="*" FontSize="20"  Binding="{Binding Physical_education}" />
+                <DataGridTextColumn Header="Russian language" Width="*" FontSize="20" Binding="{Binding Russian_language}"/>
+                <DataGridTextColumn Header="Work" Width="*" FontSize="20" Binding="{Binding Work_}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBlock x:Name="tb1" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="670,33,0,0" RenderTransformOrigin="0.468,-0.308" Width="104" Height="38" TextAlignment="Center"/>
+        <Button Content="Успеваемость" HorizontalAlignment="Left" VerticalAlignment="Top" Width="119" Margin="661,76,0,0" Height="50" Click="Button_Click_1"/>
+        <Button x:Name="bt7" Content="Написать учителю" HorizontalAlignment="Left" VerticalAlignment="Top" Width="119" Margin="659,240,0,0" Height="50" Click="Bt7_Click"/>
+        <Button Content="Расписание" HorizontalAlignment="Left" VerticalAlignment="Top" Width="119" Margin="661,157,0,0" Height="50" Click="Button_Click_2" MaxWidth="190" MaxHeight="50"/>
+        <Button x:Name="bt6" Content="Создать диаграмму" HorizontalAlignment="Left" VerticalAlignment="Top" Width="119" Margin="659,326,0,0" Height="50" Click="Button_Click"/>
+        <DataGrid x:Name="dg2"  AutoGenerateColumns="False" HorizontalAlignment="Left" Height="373" VerticalAlignment="Bottom" Width="642" Margin="10,0,0,15.2" CanUserResizeColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Date" Width="*" FontSize="15" Binding="{Binding Date}"/>
+                <DataGridTextColumn Header="Day of the week" Width="94" FontSize="15" Binding="{Binding Day_of_the_week}"/>
+                <DataGridTextColumn Header="Lesson1" Width="*" FontSize="15" Binding="{Binding Lesson1}" />
+                <DataGridTextColumn Header="Lesson2" Width="*" FontSize="15"  Binding="{Binding Lesson2}" />
+                <DataGridTextColumn Header="Lesson3" Width="*" FontSize="15" Binding="{Binding Lesson3}"/>
+                <DataGridTextColumn Header="Lesson4" Width="*" FontSize="15" Binding="{Binding Lesson4}"/>
+                <DataGridTextColumn Header="Lesson5" Width="*" FontSize="15" Binding="{Binding Lesson5}"/>
+                <DataGridTextColumn Header="Lesson6" Width="*" FontSize="15" Binding="{Binding Lesson6}"/>
+            </DataGrid.Columns>
+
+        </DataGrid>
+        <TextBox x:Name="tb3" HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" Text="Введите текст" VerticalAlignment="Top" Width="549" Margin="10,352,0,0" Visibility="Hidden"/>
+        <Button x:Name="bt2" Content="Отправить" HorizontalAlignment="Left" VerticalAlignment="Top" Width="88" Margin="564,352,0,0" Height="28" Click="Button_Click_3" Visibility="Hidden"/>
+        <Rectangle x:Name="lb2" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="111" Stroke="Black" VerticalAlignment="Top" Width="119" Margin="661,251,0,0" Visibility="Hidden"/>
+        <ComboBox x:Name="cb1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="115" Margin="663,260,0,0" Visibility="Hidden">
+            <TextBlock>Алгебра</TextBlock>
+            <TextBlock>Геометрия</TextBlock>
+            <TextBlock>Литература</TextBlock>
+            <TextBlock>Русский_язык</TextBlock>
+            <TextBlock>Труды</TextBlock>
+            <TextBlock>Физкультура</TextBlock>
+        </ComboBox>
+        <Button x:Name="bt5" Content="Открыть чат" HorizontalAlignment="Left" VerticalAlignment="Top" Width="108" Margin="666,290,0,0" Height="31" Click="Bt5_Click" Visibility="Hidden"/>
+        <TextBlock x:Name="lb1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Список чатов" VerticalAlignment="Top" Margin="684,235,0,0" Visibility="Hidden"/>
+        <RichTextBox x:Name="Rtb" HorizontalAlignment="Left" Height="334" VerticalAlignment="Top" Width="642" Margin="10,11,0,0" IsReadOnly="True" Visibility="Hidden">
+            <FlowDocument>
+                <Paragraph>
+                    <Run Text="RichTextBox"/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <Button x:Name="bt4" Content="Отмена" HorizontalAlignment="Left" VerticalAlignment="Top" Width="108" Margin="666,325,0,0" Height="31" Click="Bt4_Click" Visibility="Hidden"/>
+    </Grid>
+</Window>

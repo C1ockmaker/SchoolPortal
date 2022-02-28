@@ -1,0 +1,133 @@
+﻿<Window x:Class="WpfApp1.Teacher"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="Интерфейс учителя" Height="459.6" Width="805.6">
+    <Grid Margin="0,0,-23.8,-10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="13*"/>
+            <RowDefinition Height="7*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Rectangle x:Name="label4" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="115" Margin="663,268,0,0" Stroke="Black" VerticalAlignment="Top" Width="124" Grid.RowSpan="2" Visibility="Hidden"/>
+        <DataGrid x:Name="dg2"  AutoGenerateColumns="False" HorizontalAlignment="Left" Height="402" VerticalAlignment="Bottom" Width="642" Margin="10,0,0,30" CanUserResizeColumns="False" Grid.RowSpan="2" Visibility="Hidden">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Дата" Width="*" FontSize="15" Binding="{Binding Date}"/>
+                <DataGridTextColumn Header="День недели" Width="94" FontSize="15" Binding="{Binding Day_of_the_week}"/>
+                <DataGridTextColumn Header="Урок №1" Width="*" FontSize="15" Binding="{Binding Lesson1}" />
+                <DataGridTextColumn Header="Урок №2" Width="*" FontSize="15"  Binding="{Binding Lesson2}" />
+                <DataGridTextColumn Header="Урок №3" Width="*" FontSize="15" Binding="{Binding Lesson3}"/>
+                <DataGridTextColumn Header="Урок №4" Width="*" FontSize="15" Binding="{Binding Lesson4}"/>
+                <DataGridTextColumn Header="Урок №5" Width="*" FontSize="15" Binding="{Binding Lesson5}"/>
+                <DataGridTextColumn Header="Урок №6" Width="*" FontSize="15" Binding="{Binding Lesson6}"/>
+            </DataGrid.Columns>
+
+        </DataGrid>
+        <Button x:Name="bt2" Content="Расписание" HorizontalAlignment="Left" Width="124" Margin="662,142,0,90.4" Click="Button_Click_2" MaxWidth="190" MaxHeight="50"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Имя пользователя:" VerticalAlignment="Top" Margin="673,10,0,0" TextDecorations="Underline"/>
+        <TextBlock x:Name="tb1" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="660,29,0,0" RenderTransformOrigin="0.468,-0.308" Width="124" Height="55" TextAlignment="Center"/>
+        <TextBlock x:Name="tb4" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Учитель по:" VerticalAlignment="Top" Margin="691,88,0,0" TextDecorations="Underline"/>
+        <TextBlock x:Name="tb2" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="659,109,0,0" RenderTransformOrigin="0.468,-0.308" Width="124" Height="27" TextAlignment="Center"/>
+        <DataGrid x:Name="dg3"  AutoGenerateColumns="False" HorizontalAlignment="Left" Height="401" VerticalAlignment="Bottom" Width="642" Margin="10,0,0,29" CanUserResizeColumns="False" Grid.RowSpan="2" Visibility="Hidden">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="id" Width="10" FontSize="15" Binding="{Binding id_Student}"/>
+                <DataGridTextColumn Header="Фамилия студента" Width="110" FontSize="15" Binding="{Binding Last_name}"/>
+                <DataGridTextColumn Header="Имя студента" Width="90" FontSize="15" Binding="{Binding First_name}"/>
+                <DataGridTextColumn Header="Отчества студента" Width="110" FontSize="15" Binding="{Binding Middle_name}"/>
+                <DataGridTextColumn Header="Класс" Width="*" FontSize="15" Binding="{Binding Class}"/>
+                <DataGridTextColumn Header="Номер телефона" Width="100" FontSize="15" Binding="{Binding Number_phone}" />
+                <DataGridTextColumn Header="Почта" Width="*" FontSize="15"  Binding="{Binding Mail}" />
+                <DataGridTextColumn Header="Улица проживания" Width="*" FontSize="15" Binding="{Binding Street_address}"/>
+            </DataGrid.Columns>
+
+        </DataGrid>
+        <Button x:Name="bt5" Content="Чат с учеником" HorizontalAlignment="Left" VerticalAlignment="Top" Width="124" Margin="663,64.6,0,0" Height="55" Click="Bt5_Click" MaxWidth="190" MaxHeight="50" Grid.Row="1"/>
+        <Button x:Name="bt3" Content="  Информация &#xA;    о учениках " HorizontalAlignment="Left" VerticalAlignment="Top" Width="124" Margin="662,212,0,0" Height="46" MaxWidth="190" MaxHeight="50" Click="Bt3_Click"/>
+        <Grid Margin="671,273,10.2,29" Grid.RowSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Rectangle x:Name="label8" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="100" Stroke="Black" VerticalAlignment="Top" Width="111" Margin="0,10,0,0" Visibility="Hidden"/>
+            <Rectangle x:Name="label7" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="90" Stroke="Black" VerticalAlignment="Top" Width="111" Margin="0,31,0,0" Visibility="Hidden"/>
+            <TextBlock x:Name="label6" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Поиск по имени" VerticalAlignment="Top" Margin="10,14,0,0" Visibility="Hidden"/>
+            <TextBox x:Name="tb3" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="95" Margin="8,42,0,0" Visibility="Hidden"/>
+            <Button x:Name="bt11" Content="Найти" HorizontalAlignment="Left" VerticalAlignment="Top" Width="80" Margin="17,71,0,0" Click="Button_Click" Visibility="Hidden"/>
+            <Button x:Name="bt12" Content="Отмена" HorizontalAlignment="Left" VerticalAlignment="Top" Width="80" Margin="17,95,0,0" Click="Button_Click_1" Visibility="Hidden"/>
+
+        </Grid>
+        <Button x:Name="bt4" Content="Выставить оценку &#xA;      или отметить" HorizontalAlignment="Left" VerticalAlignment="Top" Width="126" Margin="663,281,0,0" Height="52" Click="Button_Click_3" Grid.RowSpan="2"/>
+        <Rectangle x:Name="tv_vistav2" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="204" Stroke="Black" VerticalAlignment="Top" Width="644" Margin="7,12,0,0"/>
+        <Rectangle x:Name="tv_vistav3" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="208" Stroke="Black" VerticalAlignment="Top" Width="644" Margin="7,34,0,0"/>
+        <DataGrid x:Name="dg5" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="190" VerticalAlignment="Top" Width="633" Margin="12,40,0,0">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="id" Width="38" FontSize="15" Binding="{Binding id}"/>
+                <DataGridTextColumn Header="Дата выставления" Width="77" FontSize="15" Binding="{Binding Schedule.Date}" CanUserResize="False" CanUserSort="False" CanUserReorder="False"/>
+                <DataGridTextColumn Header="День недели" Width="*" FontSize="15" Binding="{Binding Schedule.Day_of_the_week}"/>
+                <DataGridTextColumn Header="id Студента" Width="*" FontSize="15" Binding="{Binding Students.id_Student}"/>
+                <DataGridTextColumn Header="Имя студента" Width="*" FontSize="15" Binding="{Binding Students.Last_name}"/>
+                <DataGridTextColumn Header="Фамилия студента" Width="*" FontSize="15" Binding="{Binding Students.First_name}"/>
+                <DataGridTextColumn Header="Отчество студента" Width="*" FontSize="15" Binding="{Binding Students.Middle_name}" />
+                <DataGridTextColumn Header="Оценка" Width="*" FontSize="15"  Binding="{Binding Grades}" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Rectangle x:Name="tv_vistav4" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="161" Stroke="Black" VerticalAlignment="Top" Width="644" Margin="7,235,0,0" Grid.RowSpan="2"/>
+        <Rectangle x:Name="tv_vistav5" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="139" Stroke="Black" VerticalAlignment="Top" Width="644" Margin="7,267,0,0" Grid.RowSpan="2"/>
+        <Button x:Name="bt13" Content="Изменить оценку  &#xA;      или отметку" HorizontalAlignment="Left" Margin="409,29.6,0,0" VerticalAlignment="Top" Width="161" Height="44" Grid.Row="1" Click="Bt13_Click"/>
+        <Button x:Name="bt14" Content="Поставить новую оценку &#xA;           или отметить" HorizontalAlignment="Left" Margin="130,29.6,0,0" VerticalAlignment="Top" Width="157" Height="44" Grid.Row="1" Click="Bt14_Click"/>
+        <TextBlock x:Name="tv_vistav6" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Функционал программы:" VerticalAlignment="Top" Margin="280,242,0,0" TextDecorations="Underline"/>
+        <Button x:Name="bt15" Content="Отмена" HorizontalAlignment="Left" Margin="475,240.6,0,-131" VerticalAlignment="Top" Width="157" Height="44" Grid.Row="1" Click="Bt15_Click"/>
+        <TextBlock x:Name="tv_vistav1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Все оценки по предмету:" VerticalAlignment="Top" Margin="277,15,0,0" TextDecorations="Underline"/>
+        <TextBlock x:Name="tb_dobav3" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Поставьте оценку/стат.:" VerticalAlignment="Top" Margin="414,11.6,0,0" Grid.Row="1" Visibility="Hidden"/>
+        <TextBlock x:Name="tb_dobav1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Выберите ученика:" VerticalAlignment="Top" Margin="17,8.6,0,0" Grid.Row="1" Visibility="Hidden"/>
+        <ComboBox x:Name="cb2" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="127,9.6,0,0" Grid.Row="1" Height="23" Visibility="Hidden"/>
+        <Button x:Name="bt_dobav1" Content="Поставить оценку" HorizontalAlignment="Left" Margin="258,61.6,0,0" VerticalAlignment="Top" Width="157" Height="36" Grid.Row="1" Click="Button_Click_4" Visibility="Hidden"/>
+        <TextBlock x:Name="tb_dobav2" HorizontalAlignment="Left" TextWrapping="Wrap" Text="id_Стундента:" VerticalAlignment="Top" Margin="257,11.6,0,0" Grid.Row="1" Visibility="Hidden"/>
+        <TextBlock x:Name="lab1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Номер телефона:" VerticalAlignment="Top" Margin="24,85,0,0" Grid.Row="1" Visibility="Hidden"/>
+        <TextBlock x:Name="tb_dobav4" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Выберите дату:" VerticalAlignment="Top" Margin="437,69.6,0,0" Grid.Row="1" Visibility="Hidden"/>
+        <ComboBox x:Name="cb3" HorizontalAlignment="Left" VerticalAlignment="Top" Width="98" Margin="534,67.6,0,0" Grid.Row="1" Height="23" Visibility="Hidden"/>
+        <ComboBox x:Name="tb7" HorizontalAlignment="Left" VerticalAlignment="Top" Width="73" Margin="336,9.6,0,0" Grid.Row="1" Height="23" Visibility="Hidden"/>
+        <ComboBox x:Name="tb8" HorizontalAlignment="Left" VerticalAlignment="Top" Width="101" Margin="544,9.6,0,0" Grid.Row="1" Height="23" Visibility="Hidden"/>
+        <ComboBox x:Name="tb9" HorizontalAlignment="Left" VerticalAlignment="Top" Width="102" Margin="130,85.2,0,0" Grid.Row="1" Height="23" Visibility="Hidden"/>
+        <Button x:Name="bt8" Content="Изменить" HorizontalAlignment="Left" VerticalAlignment="Top" Width="118" Margin="381,73.6,0,0" Grid.Row="1" Height="34" Click="Bt8_Click" Visibility="Hidden"/>
+        <ComboBox x:Name="cb4" HorizontalAlignment="Left" VerticalAlignment="Top" Width="59" Margin="586,17.6,0,0" Grid.Row="1" Visibility="Hidden"/>
+        <ComboBox x:Name="cb5" Margin="127,15.6,600.2,110" Grid.Row="1" Visibility="Hidden"/>
+        <ComboBox x:Name="cb6" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="298,16.6,0,0" Grid.Row="1" Height="23" Visibility="Hidden"/>
+        <TextBlock x:Name="tb_ismen4" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="498,20.6,0,0" Grid.Row="1" Visibility="Hidden"><Run Text="Оценкe/статус:"/></TextBlock>
+        <TextBlock x:Name="tb_ismen2" Text="id Студента:" TextWrapping="Wrap"  Margin="229,18.6,487.2,112" Grid.Row="1" RenderTransformOrigin="-1.526,1.638" Visibility="Hidden"/>
+        <TextBlock x:Name="tb_ismen1" TextWrapping="Wrap" Text="Дата выставления:" Margin="20,17.6,675.2,112" Grid.Row="1" Visibility="Hidden"/>
+        <Button x:Name="bt9" Content="Найти" HorizontalAlignment="Left" VerticalAlignment="Top" Width="118" Margin="194,73.6,0,0" Grid.Row="1" Height="34" Click="Bt9_Click_1" Visibility="Hidden"/>
+        <DataGrid AutoGenerateColumns="False" x:Name="dg6" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="609" Margin="-690,-116,0,0" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="id" Width="38" FontSize="15" Binding="{Binding id}"/>
+                <DataGridTextColumn Header="id Day" Width="38" FontSize="15" Binding="{Binding id_Day}"/>
+                <DataGridTextColumn Header="id Stud" Width="77" FontSize="15" Binding="{Binding id_Student}" CanUserResize="False" CanUserSort="False" CanUserReorder="False"/>
+                <DataGridTextColumn Header="Sub" Width="*" FontSize="15" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <ComboBox x:Name="cb7" HorizontalAlignment="Left" VerticalAlignment="Top" Width="44" Margin="445,17.6,0,0" Grid.Row="1" Visibility="Hidden"/>
+        <TextBlock x:Name="tb_ismen3" HorizontalAlignment="Left" TextWrapping="Wrap" Text="id:" VerticalAlignment="Top" Margin="427,18.6,0,0" Grid.Row="1" Visibility="Hidden"/>
+        <Rectangle x:Name="label5" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="127" Margin="663,1.6,0,0" Stroke="Black" VerticalAlignment="Top" Width="124" Grid.Row="1" Visibility="Hidden"/>
+        <RichTextBox x:Name="Rtd" HorizontalAlignment="Left" Height="376" Margin="7,6,0,0" VerticalAlignment="Top" Width="650" BorderBrush="#FF2F2F2F" Background="White" Foreground="Black" Grid.RowSpan="2" Visibility="Hidden">
+            <FlowDocument>
+                <Paragraph>
+                    <Run Text="RichTextBox"/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <Button x:Name="bt1" Content="Отправить" HorizontalAlignment="Left" VerticalAlignment="Top" Width="105" Margin="552,105.6,0,0" Grid.Row="1" Height="23" Click="Bt1_Click" Visibility="Hidden"/>
+        <TextBox x:Name="tb5" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="540" Margin="7,105.6,0,0" Grid.Row="1" Visibility="Hidden"/>
+        <TextBlock x:Name="label3" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Выберите чат:" VerticalAlignment="Top" Margin="689,268,0,0" Height="22" Grid.RowSpan="2" Visibility="Hidden"/>
+        <TextBlock x:Name="label2" HorizontalAlignment="Left" TextWrapping="Wrap" Text="ФИО_Ученика:" VerticalAlignment="Top" Margin="687,6.6,0,0" Grid.Row="1" Visibility="Hidden"/>
+        <ComboBox x:Name="cb8" HorizontalAlignment="Left" VerticalAlignment="Top" Width="116" Margin="668,26.6,0,0" Grid.Row="1" Height="19" Visibility="Hidden"/>
+        <TextBlock x:Name="label1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="ID_Ученика:" VerticalAlignment="Top" Margin="693,50.6,0,0" Grid.Row="1" Visibility="Hidden"/>
+        <ComboBox x:Name="cb1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="116" Margin="668,69.6,0,0" Grid.Row="1" Height="19" RenderTransformOrigin="0.497,0.504" Visibility="Hidden"/>
+        <Button x:Name="bt6" HorizontalAlignment="Left" VerticalAlignment="Top" Width="57" Margin="726,97.6,0,0" Grid.Row="1" Height="26" Content="Отменить" Click="Bt6_Click" Visibility="Hidden"/>
+        <Button x:Name="bt7" Content="Найти" HorizontalAlignment="Left" VerticalAlignment="Top" Width="57" Height="26" Margin="667,97.6,0,0" Grid.Row="1" Click="Button_Click_5" Visibility="Hidden"/>
+
+    </Grid>
+</Window>

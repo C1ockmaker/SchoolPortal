@@ -1,0 +1,546 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SchoolPortalModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Algebra_grades">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="id_Day" Type="Int32" />
+    <Property Name="id_Teacher" Type="Int32" />
+    <Property Name="id_Student" Type="Int32" />
+    <Property Name="Grades" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Schedule" Relationship="Self.FK_Algebra_grades_Schedule" FromRole="Algebra_grades" ToRole="Schedule" />
+    <NavigationProperty Name="Students" Relationship="Self.FK_Algebra_grades_Students" FromRole="Algebra_grades" ToRole="Students" />
+    <NavigationProperty Name="Teachers" Relationship="Self.FK_Algebra_grades_Teachers" FromRole="Algebra_grades" ToRole="Teachers" />
+  </EntityType>
+  <EntityType Name="Geometry_grades">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="id_Day" Type="Int32" />
+    <Property Name="id_Teacher" Type="Int32" />
+    <Property Name="id_Student" Type="Int32" />
+    <Property Name="Grades" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Schedule" Relationship="Self.FK_Geometry_grades_Schedule" FromRole="Geometry_grades" ToRole="Schedule" />
+    <NavigationProperty Name="Students" Relationship="Self.FK_Geometry_grades_Students" FromRole="Geometry_grades" ToRole="Students" />
+    <NavigationProperty Name="Teachers" Relationship="Self.FK_Geometry_grades_Teachers" FromRole="Geometry_grades" ToRole="Teachers" />
+  </EntityType>
+  <EntityType Name="Grades_Students">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="id_Day" Type="Int32" />
+    <Property Name="id_Student" Type="Int32" />
+    <Property Name="Algebra" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Geometry" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Literature" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Physical_education" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Russian_language" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Work_" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Schedule" Relationship="Self.FK_Grades_Students_Schedule" FromRole="Grades_Students" ToRole="Schedule" />
+    <NavigationProperty Name="Students" Relationship="Self.FK_Grades_Students_Students" FromRole="Grades_Students" ToRole="Students" />
+  </EntityType>
+  <EntityType Name="Literature_grades">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="id_Day" Type="Int32" Nullable="false" />
+    <Property Name="id_Teacher" Type="Int32" />
+    <Property Name="id_Student" Type="Int32" />
+    <Property Name="Grades" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Schedule" Relationship="Self.FK_Literature_grades_Schedule" FromRole="Literature_grades" ToRole="Schedule" />
+    <NavigationProperty Name="Students" Relationship="Self.FK_Literature_grades_Students" FromRole="Literature_grades" ToRole="Students" />
+    <NavigationProperty Name="Teachers" Relationship="Self.FK_Literature_grades_Teachers" FromRole="Literature_grades" ToRole="Teachers" />
+  </EntityType>
+  <EntityType Name="Physical_education_grades">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="id_Day" Type="Int32" Nullable="false" />
+    <Property Name="id_Teacher" Type="Int32" />
+    <Property Name="id_Student" Type="Int32" />
+    <Property Name="Grades" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Schedule" Relationship="Self.FK_Physical_education_grades_Schedule" FromRole="Physical_education_grades" ToRole="Schedule" />
+    <NavigationProperty Name="Students" Relationship="Self.FK_Physical_education_grades_Students" FromRole="Physical_education_grades" ToRole="Students" />
+    <NavigationProperty Name="Teachers" Relationship="Self.FK_Physical_education_grades_Teachers" FromRole="Physical_education_grades" ToRole="Teachers" />
+  </EntityType>
+  <EntityType Name="Russian_language_grades">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="id_Day" Type="Int32" />
+    <Property Name="id_Teacher" Type="Int32" />
+    <Property Name="id_Student" Type="Int32" />
+    <Property Name="Grades" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Schedule" Relationship="Self.FK_Russian_language_grades_Schedule" FromRole="Russian_language_grades" ToRole="Schedule" />
+    <NavigationProperty Name="Students" Relationship="Self.FK_Russian_language_grades_Students" FromRole="Russian_language_grades" ToRole="Students" />
+    <NavigationProperty Name="Teachers" Relationship="Self.FK_Russian_language_grades_Teachers" FromRole="Russian_language_grades" ToRole="Teachers" />
+  </EntityType>
+  <EntityType Name="Schedule">
+    <Key>
+      <PropertyRef Name="id_Day" />
+    </Key>
+    <Property Name="id_Day" Type="Int32" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Precision="0" />
+    <Property Name="Key_" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Day_of_the_week" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Lesson1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Lesson2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Lesson3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Lesson4" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Lesson5" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Lesson6" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Algebra_grades" Relationship="Self.FK_Algebra_grades_Schedule" FromRole="Schedule" ToRole="Algebra_grades" />
+    <NavigationProperty Name="Geometry_grades" Relationship="Self.FK_Geometry_grades_Schedule" FromRole="Schedule" ToRole="Geometry_grades" />
+    <NavigationProperty Name="Grades_Students" Relationship="Self.FK_Grades_Students_Schedule" FromRole="Schedule" ToRole="Grades_Students" />
+    <NavigationProperty Name="Literature_grades" Relationship="Self.FK_Literature_grades_Schedule" FromRole="Schedule" ToRole="Literature_grades" />
+    <NavigationProperty Name="Physical_education_grades" Relationship="Self.FK_Physical_education_grades_Schedule" FromRole="Schedule" ToRole="Physical_education_grades" />
+    <NavigationProperty Name="Russian_language_grades" Relationship="Self.FK_Russian_language_grades_Schedule" FromRole="Schedule" ToRole="Russian_language_grades" />
+    <NavigationProperty Name="Work_grades" Relationship="Self.FK_Work_grades_Schedule" FromRole="Schedule" ToRole="Work_grades" />
+  </EntityType>
+  <EntityType Name="Secret_key">
+    <Key>
+      <PropertyRef Name="Key_" />
+    </Key>
+    <Property Name="Key_" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Secret_code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Students" Relationship="Self.FK_Students_Secret_key" FromRole="Secret_key" ToRole="Students" />
+    <NavigationProperty Name="Teachers" Relationship="Self.FK_Teachers_Secret_key" FromRole="Secret_key" ToRole="Teachers" />
+  </EntityType>
+  <EntityType Name="Students">
+    <Key>
+      <PropertyRef Name="id_Student" />
+    </Key>
+    <Property Name="id_Student" Type="Int32" Nullable="false" />
+    <Property Name="Key_" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Last_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="First_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Middle_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Class" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Number_phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Mail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Street_address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Algebra_grades" Relationship="Self.FK_Algebra_grades_Students" FromRole="Students" ToRole="Algebra_grades" />
+    <NavigationProperty Name="Geometry_grades" Relationship="Self.FK_Geometry_grades_Students" FromRole="Students" ToRole="Geometry_grades" />
+    <NavigationProperty Name="Grades_Students" Relationship="Self.FK_Grades_Students_Students" FromRole="Students" ToRole="Grades_Students" />
+    <NavigationProperty Name="Literature_grades" Relationship="Self.FK_Literature_grades_Students" FromRole="Students" ToRole="Literature_grades" />
+    <NavigationProperty Name="Physical_education_grades" Relationship="Self.FK_Physical_education_grades_Students" FromRole="Students" ToRole="Physical_education_grades" />
+    <NavigationProperty Name="Russian_language_grades" Relationship="Self.FK_Russian_language_grades_Students" FromRole="Students" ToRole="Russian_language_grades" />
+    <NavigationProperty Name="Secret_key" Relationship="Self.FK_Students_Secret_key" FromRole="Students" ToRole="Secret_key" />
+    <NavigationProperty Name="Work_grades" Relationship="Self.FK_Work_grades_Students" FromRole="Students" ToRole="Work_grades" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Teachers">
+    <Key>
+      <PropertyRef Name="id_Teacher" />
+    </Key>
+    <Property Name="id_Teacher" Type="Int32" Nullable="false" />
+    <Property Name="Key_" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FIO_Teacher" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Subject" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Algebra_grades" Relationship="Self.FK_Algebra_grades_Teachers" FromRole="Teachers" ToRole="Algebra_grades" />
+    <NavigationProperty Name="Geometry_grades" Relationship="Self.FK_Geometry_grades_Teachers" FromRole="Teachers" ToRole="Geometry_grades" />
+    <NavigationProperty Name="Literature_grades" Relationship="Self.FK_Literature_grades_Teachers" FromRole="Teachers" ToRole="Literature_grades" />
+    <NavigationProperty Name="Physical_education_grades" Relationship="Self.FK_Physical_education_grades_Teachers" FromRole="Teachers" ToRole="Physical_education_grades" />
+    <NavigationProperty Name="Russian_language_grades" Relationship="Self.FK_Russian_language_grades_Teachers" FromRole="Teachers" ToRole="Russian_language_grades" />
+    <NavigationProperty Name="Secret_key" Relationship="Self.FK_Teachers_Secret_key" FromRole="Teachers" ToRole="Secret_key" />
+    <NavigationProperty Name="Work_grades" Relationship="Self.FK_Work_grades_Teachers" FromRole="Teachers" ToRole="Work_grades" />
+  </EntityType>
+  <EntityType Name="Work_grades">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="id_Day" Type="Int32" />
+    <Property Name="id_Teacher" Type="Int32" />
+    <Property Name="id_Student" Type="Int32" />
+    <Property Name="Grades" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Schedule" Relationship="Self.FK_Work_grades_Schedule" FromRole="Work_grades" ToRole="Schedule" />
+    <NavigationProperty Name="Students" Relationship="Self.FK_Work_grades_Students" FromRole="Work_grades" ToRole="Students" />
+    <NavigationProperty Name="Teachers" Relationship="Self.FK_Work_grades_Teachers" FromRole="Work_grades" ToRole="Teachers" />
+  </EntityType>
+  <Association Name="FK_Algebra_grades_Schedule">
+    <End Role="Schedule" Type="Self.Schedule" Multiplicity="0..1" />
+    <End Role="Algebra_grades" Type="Self.Algebra_grades" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Schedule">
+        <PropertyRef Name="id_Day" />
+      </Principal>
+      <Dependent Role="Algebra_grades">
+        <PropertyRef Name="id_Day" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Algebra_grades_Students">
+    <End Role="Students" Type="Self.Students" Multiplicity="0..1" />
+    <End Role="Algebra_grades" Type="Self.Algebra_grades" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Students">
+        <PropertyRef Name="id_Student" />
+      </Principal>
+      <Dependent Role="Algebra_grades">
+        <PropertyRef Name="id_Student" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Algebra_grades_Teachers">
+    <End Role="Teachers" Type="Self.Teachers" Multiplicity="0..1" />
+    <End Role="Algebra_grades" Type="Self.Algebra_grades" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Teachers">
+        <PropertyRef Name="id_Teacher" />
+      </Principal>
+      <Dependent Role="Algebra_grades">
+        <PropertyRef Name="id_Teacher" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Geometry_grades_Schedule">
+    <End Role="Schedule" Type="Self.Schedule" Multiplicity="0..1" />
+    <End Role="Geometry_grades" Type="Self.Geometry_grades" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Schedule">
+        <PropertyRef Name="id_Day" />
+      </Principal>
+      <Dependent Role="Geometry_grades">
+        <PropertyRef Name="id_Day" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Geometry_grades_Students">
+    <End Role="Students" Type="Self.Students" Multiplicity="0..1" />
+    <End Role="Geometry_grades" Type="Self.Geometry_grades" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Students">
+        <PropertyRef Name="id_Student" />
+      </Principal>
+      <Dependent Role="Geometry_grades">
+        <PropertyRef Name="id_Student" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Geometry_grades_Teachers">
+    <End Role="Teachers" Type="Self.Teachers" Multiplicity="0..1" />
+    <End Role="Geometry_grades" Type="Self.Geometry_grades" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Teachers">
+        <PropertyRef Name="id_Teacher" />
+      </Principal>
+      <Dependent Role="Geometry_grades">
+        <PropertyRef Name="id_Teacher" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Grades_Students_Schedule">
+    <End Role="Schedule" Type="Self.Schedule" Multiplicity="0..1" />
+    <End Role="Grades_Students" Type="Self.Grades_Students" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Schedule">
+        <PropertyRef Name="id_Day" />
+      </Principal>
+      <Dependent Role="Grades_Students">
+        <PropertyRef Name="id_Day" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Grades_Students_Students">
+    <End Role="Students" Type="Self.Students" Multiplicity="0..1" />
+    <End Role="Grades_Students" Type="Self.Grades_Students" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Students">
+        <PropertyRef Name="id_Student" />
+      </Principal>
+      <Dependent Role="Grades_Students">
+        <PropertyRef Name="id_Student" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Literature_grades_Schedule">
+    <End Role="Schedule" Type="Self.Schedule" Multiplicity="1" />
+    <End Role="Literature_grades" Type="Self.Literature_grades" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Schedule">
+        <PropertyRef Name="id_Day" />
+      </Principal>
+      <Dependent Role="Literature_grades">
+        <PropertyRef Name="id_Day" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Literature_grades_Students">
+    <End Role="Students" Type="Self.Students" Multiplicity="0..1" />
+    <End Role="Literature_grades" Type="Self.Literature_grades" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Students">
+        <PropertyRef Name="id_Student" />
+      </Principal>
+      <Dependent Role="Literature_grades">
+        <PropertyRef Name="id_Student" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Literature_grades_Teachers">
+    <End Role="Teachers" Type="Self.Teachers" Multiplicity="0..1" />
+    <End Role="Literature_grades" Type="Self.Literature_grades" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Teachers">
+        <PropertyRef Name="id_Teacher" />
+      </Principal>
+      <Dependent Role="Literature_grades">
+        <PropertyRef Name="id_Teacher" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Physical_education_grades_Schedule">
+    <End Role="Schedule" Type="Self.Schedule" Multiplicity="1" />
+    <End Role="Physical_education_grades" Type="Self.Physical_education_grades" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Schedule">
+        <PropertyRef Name="id_Day" />
+      </Principal>
+      <Dependent Role="Physical_education_grades">
+        <PropertyRef Name="id_Day" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Physical_education_grades_Students">
+    <End Role="Students" Type="Self.Students" Multiplicity="0..1" />
+    <End Role="Physical_education_grades" Type="Self.Physical_education_grades" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Students">
+        <PropertyRef Name="id_Student" />
+      </Principal>
+      <Dependent Role="Physical_education_grades">
+        <PropertyRef Name="id_Student" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Physical_education_grades_Teachers">
+    <End Role="Teachers" Type="Self.Teachers" Multiplicity="0..1" />
+    <End Role="Physical_education_grades" Type="Self.Physical_education_grades" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Teachers">
+        <PropertyRef Name="id_Teacher" />
+      </Principal>
+      <Dependent Role="Physical_education_grades">
+        <PropertyRef Name="id_Teacher" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Russian_language_grades_Schedule">
+    <End Role="Schedule" Type="Self.Schedule" Multiplicity="0..1" />
+    <End Role="Russian_language_grades" Type="Self.Russian_language_grades" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Schedule">
+        <PropertyRef Name="id_Day" />
+      </Principal>
+      <Dependent Role="Russian_language_grades">
+        <PropertyRef Name="id_Day" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Russian_language_grades_Students">
+    <End Role="Students" Type="Self.Students" Multiplicity="0..1" />
+    <End Role="Russian_language_grades" Type="Self.Russian_language_grades" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Students">
+        <PropertyRef Name="id_Student" />
+      </Principal>
+      <Dependent Role="Russian_language_grades">
+        <PropertyRef Name="id_Student" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Russian_language_grades_Teachers">
+    <End Role="Teachers" Type="Self.Teachers" Multiplicity="0..1" />
+    <End Role="Russian_language_grades" Type="Self.Russian_language_grades" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Teachers">
+        <PropertyRef Name="id_Teacher" />
+      </Principal>
+      <Dependent Role="Russian_language_grades">
+        <PropertyRef Name="id_Teacher" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Work_grades_Schedule">
+    <End Role="Schedule" Type="Self.Schedule" Multiplicity="0..1" />
+    <End Role="Work_grades" Type="Self.Work_grades" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Schedule">
+        <PropertyRef Name="id_Day" />
+      </Principal>
+      <Dependent Role="Work_grades">
+        <PropertyRef Name="id_Day" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Students_Secret_key">
+    <End Role="Secret_key" Type="Self.Secret_key" Multiplicity="0..1" />
+    <End Role="Students" Type="Self.Students" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Secret_key">
+        <PropertyRef Name="Key_" />
+      </Principal>
+      <Dependent Role="Students">
+        <PropertyRef Name="Key_" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Teachers_Secret_key">
+    <End Role="Secret_key" Type="Self.Secret_key" Multiplicity="0..1" />
+    <End Role="Teachers" Type="Self.Teachers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Secret_key">
+        <PropertyRef Name="Key_" />
+      </Principal>
+      <Dependent Role="Teachers">
+        <PropertyRef Name="Key_" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Work_grades_Students">
+    <End Role="Students" Type="Self.Students" Multiplicity="0..1" />
+    <End Role="Work_grades" Type="Self.Work_grades" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Students">
+        <PropertyRef Name="id_Student" />
+      </Principal>
+      <Dependent Role="Work_grades">
+        <PropertyRef Name="id_Student" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Work_grades_Teachers">
+    <End Role="Teachers" Type="Self.Teachers" Multiplicity="0..1" />
+    <End Role="Work_grades" Type="Self.Work_grades" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Teachers">
+        <PropertyRef Name="id_Teacher" />
+      </Principal>
+      <Dependent Role="Work_grades">
+        <PropertyRef Name="id_Teacher" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SchoolPortalEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Algebra_grades" EntityType="Self.Algebra_grades" />
+    <EntitySet Name="Geometry_grades" EntityType="Self.Geometry_grades" />
+    <EntitySet Name="Grades_Students" EntityType="Self.Grades_Students" />
+    <EntitySet Name="Literature_grades" EntityType="Self.Literature_grades" />
+    <EntitySet Name="Physical_education_grades" EntityType="Self.Physical_education_grades" />
+    <EntitySet Name="Russian_language_grades" EntityType="Self.Russian_language_grades" />
+    <EntitySet Name="Schedule" EntityType="Self.Schedule" />
+    <EntitySet Name="Secret_key" EntityType="Self.Secret_key" />
+    <EntitySet Name="Students" EntityType="Self.Students" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="Teachers" EntityType="Self.Teachers" />
+    <EntitySet Name="Work_grades" EntityType="Self.Work_grades" />
+    <AssociationSet Name="FK_Algebra_grades_Schedule" Association="Self.FK_Algebra_grades_Schedule">
+      <End Role="Schedule" EntitySet="Schedule" />
+      <End Role="Algebra_grades" EntitySet="Algebra_grades" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Algebra_grades_Students" Association="Self.FK_Algebra_grades_Students">
+      <End Role="Students" EntitySet="Students" />
+      <End Role="Algebra_grades" EntitySet="Algebra_grades" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Algebra_grades_Teachers" Association="Self.FK_Algebra_grades_Teachers">
+      <End Role="Teachers" EntitySet="Teachers" />
+      <End Role="Algebra_grades" EntitySet="Algebra_grades" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Geometry_grades_Schedule" Association="Self.FK_Geometry_grades_Schedule">
+      <End Role="Schedule" EntitySet="Schedule" />
+      <End Role="Geometry_grades" EntitySet="Geometry_grades" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Geometry_grades_Students" Association="Self.FK_Geometry_grades_Students">
+      <End Role="Students" EntitySet="Students" />
+      <End Role="Geometry_grades" EntitySet="Geometry_grades" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Geometry_grades_Teachers" Association="Self.FK_Geometry_grades_Teachers">
+      <End Role="Teachers" EntitySet="Teachers" />
+      <End Role="Geometry_grades" EntitySet="Geometry_grades" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Grades_Students_Schedule" Association="Self.FK_Grades_Students_Schedule">
+      <End Role="Schedule" EntitySet="Schedule" />
+      <End Role="Grades_Students" EntitySet="Grades_Students" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Grades_Students_Students" Association="Self.FK_Grades_Students_Students">
+      <End Role="Students" EntitySet="Students" />
+      <End Role="Grades_Students" EntitySet="Grades_Students" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Literature_grades_Schedule" Association="Self.FK_Literature_grades_Schedule">
+      <End Role="Schedule" EntitySet="Schedule" />
+      <End Role="Literature_grades" EntitySet="Literature_grades" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Literature_grades_Students" Association="Self.FK_Literature_grades_Students">
+      <End Role="Students" EntitySet="Students" />
+      <End Role="Literature_grades" EntitySet="Literature_grades" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Literature_grades_Teachers" Association="Self.FK_Literature_grades_Teachers">
+      <End Role="Teachers" EntitySet="Teachers" />
+      <End Role="Literature_grades" EntitySet="Literature_grades" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Physical_education_grades_Schedule" Association="Self.FK_Physical_education_grades_Schedule">
+      <End Role="Schedule" EntitySet="Schedule" />
+      <End Role="Physical_education_grades" EntitySet="Physical_education_grades" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Physical_education_grades_Students" Association="Self.FK_Physical_education_grades_Students">
+      <End Role="Students" EntitySet="Students" />
+      <End Role="Physical_education_grades" EntitySet="Physical_education_grades" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Physical_education_grades_Teachers" Association="Self.FK_Physical_education_grades_Teachers">
+      <End Role="Teachers" EntitySet="Teachers" />
+      <End Role="Physical_education_grades" EntitySet="Physical_education_grades" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Russian_language_grades_Schedule" Association="Self.FK_Russian_language_grades_Schedule">
+      <End Role="Schedule" EntitySet="Schedule" />
+      <End Role="Russian_language_grades" EntitySet="Russian_language_grades" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Russian_language_grades_Students" Association="Self.FK_Russian_language_grades_Students">
+      <End Role="Students" EntitySet="Students" />
+      <End Role="Russian_language_grades" EntitySet="Russian_language_grades" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Russian_language_grades_Teachers" Association="Self.FK_Russian_language_grades_Teachers">
+      <End Role="Teachers" EntitySet="Teachers" />
+      <End Role="Russian_language_grades" EntitySet="Russian_language_grades" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Work_grades_Schedule" Association="Self.FK_Work_grades_Schedule">
+      <End Role="Schedule" EntitySet="Schedule" />
+      <End Role="Work_grades" EntitySet="Work_grades" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Students_Secret_key" Association="Self.FK_Students_Secret_key">
+      <End Role="Secret_key" EntitySet="Secret_key" />
+      <End Role="Students" EntitySet="Students" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Teachers_Secret_key" Association="Self.FK_Teachers_Secret_key">
+      <End Role="Secret_key" EntitySet="Secret_key" />
+      <End Role="Teachers" EntitySet="Teachers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Work_grades_Students" Association="Self.FK_Work_grades_Students">
+      <End Role="Students" EntitySet="Students" />
+      <End Role="Work_grades" EntitySet="Work_grades" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Work_grades_Teachers" Association="Self.FK_Work_grades_Teachers">
+      <End Role="Teachers" EntitySet="Teachers" />
+      <End Role="Work_grades" EntitySet="Work_grades" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
